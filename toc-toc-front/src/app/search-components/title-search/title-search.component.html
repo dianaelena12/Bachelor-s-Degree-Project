@@ -1,0 +1,66 @@
+<main class="title-search">
+    <div class="separator separator-bottom separator-skew">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+    <div class="position-relative">
+        <section class="section section-lg section-hero section-shaped">
+            <div class="shape shape-style-1 shape-primary alpha-4">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            <div class="separator separator-bottom separator-skew">
+                <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                  <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+                </svg>
+              </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="card card-profile shadow mt--300">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-lg-6 text-center">
+                                <p class="lead text-primary">Allright. Let's get started. In the input box below, type the name of any recipe you would like then press 'RESULTS' to see the matching results.</p>
+                            </div>
+                        </div>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="ni ni-zoom-split-in"></i>
+                            </span>
+                        </div>
+                        <input class="form-control" [(ngModel)]="inputText" placeholder="Search" type="text">
+                    </div>
+                    <div class="button">
+                        <button class="btn btn-icon btn-3 btn-neutral" type="button" (click)="onSubmit()">
+                            <span class="btn-inner--icon">
+                            </span>
+                            <span class="btn-inner--text">
+                                Results
+                            </span>
+                        </button>
+                    </div>
+                    <div class="list-items">
+                        <ul class="recipes" *ngFor="let recipe of results">
+                            <li> 
+                                <a [routerLink] = "['/recipe-details']">
+                                    <div>
+                                    <p> {{recipe.title}}</p>
+                                    <p> Total time: {{recipe.total_time}}</p>
+                                    <p> Yields: {{recipe.yields}} portions</p>
+                                    </div> 
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                 </div>   
+            </div>
+        </section>
+    </div>
+</main>
