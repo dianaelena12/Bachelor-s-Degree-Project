@@ -60,7 +60,6 @@
             <a [routerLink]="['/find-by-title']" class="dropdown-item">Recipe by title</a>
             <a [routerLink]="['/find-by-ingredients']" class="dropdown-item">Recipe by ingredients</a>
             <a [routerLink]="['/feeling-lucky']" class="dropdown-item">I'm feeling lucky</a>
-            <a [routerLink]="['/register']" class="dropdown-item">Register</a>
           </div>
         </li>
       </ul>
@@ -89,16 +88,27 @@
             <span class="nav-link-inner--text d-lg-none">Github</span>
           </a>
         </li> -->
-        <li class="nav-item d-none d-lg-block ml-lg-4">
-          <a target="_blank" class="btn btn-neutral btn-icon">
-            <span class="nav-link-inner--text">Register</span>
-          </a>
-        </li>
-        <li class="nav-item d-none d-lg-block ml-lg-4">
-          <a target="_blank" class="btn btn-neutral btn-icon">
-            <span class="nav-link-inner--text">Log In</span>
-          </a>
-        </li>
+        <div *ngIf="loggedIn() == false"  class="loggedIn__wrapper">
+          <li class="nav-item d-none d-lg-block ml-lg-4">
+            <a routerLinkActive="active" [routerLink]="['signup']" target="_blank" class="btn btn-neutral btn-icon">
+              <span class="nav-link-inner--text">Register</span>
+            </a>
+          </li>
+        </div>
+        <div *ngIf="loggedIn() == false" class="loggedIn__wrapper">
+          <li class="nav-item d-none d-lg-block ml-lg-4">
+            <a routerLinkActive="active" [routerLink]="['login']"target="_blank" class="btn btn-neutral btn-icon">
+              <span class="nav-link-inner--text">Log In</span>
+            </a>
+          </li>
+        </div>
+        <div *ngIf="loggedIn()" class="loggedIn__wrapper">
+          <li class="nav-item d-none d-lg-block ml-lg-4">
+            <button routerLinkActive="active" (click)="logout()"  target="_blank" class="btn btn-neutral btn-icon">
+              <span class="nav-link-inner--text">Log out</span>
+            </button>
+          </li>
+        </div>
       </ul>
     </div>
   </div>

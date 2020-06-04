@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @RestController
@@ -41,5 +42,12 @@ public class RecipeController {
         return recipes;
     }
 
+    @PostMapping("/by-ingredients")
+    @CrossOrigin(origins = "*")
+    public List<Recipe> findByIngredients(@RequestBody Collection<String> ingredients) {
+        List<Recipe> recipes = new ArrayList<>();
+        repo.findByIngredientsIn(ingredients).forEach(recipes::add);
+        return recipes;
+    }
 
 }

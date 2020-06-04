@@ -15,7 +15,8 @@ const routes: Routes =[
     { path: 'home',             component: HomeComponent },
     { path: 'find-by-title',     component: TitleSearchComponent },
     { path: 'all-recipes',           component: BrowseRecipesComponent },
-    // { path: 'landing',          component: LandingComponent },
+    { path: 'signup',          component: SignupComponent },
+    { path: 'login',          component: LoginComponent },
     { path: 'recipe-details',          component: ProfileComponent },
     { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];

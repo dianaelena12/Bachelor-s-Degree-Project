@@ -49,7 +49,7 @@
                     <div class="list-items">
                         <ul class="recipes" *ngFor="let recipe of results">
                             <li> 
-                                <a [routerLink] = "['/recipe-details']">
+                                <a [routerLink] = "['/recipe-details']" [state]= "{ recipe : recipe }">
                                     <div>
                                     <p> {{recipe.title}}</p>
                                     <p> Total time: {{recipe.total_time}}</p>

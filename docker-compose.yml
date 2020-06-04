@@ -15,4 +15,6 @@ services:
       ELASTICSEARCH_HOSTS: http://e-node:9200 
   mongo:
     image: mongo
+    ports:
+      - '27017:27017'
     command: --serviceExecutor adaptive
