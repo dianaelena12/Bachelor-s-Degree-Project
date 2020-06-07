@@ -27,11 +27,16 @@
                     <div class="list-items">
                         <ul class="recipes" *ngFor="let recipe of recipes">
                               <li> 
-                                <a [routerLink] = "['/recipe-details']" [state]= "{ recipe : recipe }" >
-                                  <div>
-                                    <p> {{recipe.title}}</p>
-                                    <p> Total time: {{recipe.total_time}}</p>
-                                    <p> Yields: {{recipe.yields}} portions</p>
+                                <a [routerLink] = "['/recipe-details']" [state]= "{ recipe : recipe.id }" >
+                                  <div class="list-item">
+                                    <div class="item-image">
+                                      <img src={{recipe.image}} class="img-fluid rounded-shadow-lg" style="width:200px;height:200px;">
+                                    </div>
+                                    <div class="item-details">
+                                      <p class="title"> {{recipe.title}}</p>
+                                      <p class="time"> Total time: {{recipe.total_time}}</p>
+                                      <p class="yields"> Yields: {{recipe.yields}} portions</p>
+                                    </div>
                                   </div> 
                               </a>
                             </li>

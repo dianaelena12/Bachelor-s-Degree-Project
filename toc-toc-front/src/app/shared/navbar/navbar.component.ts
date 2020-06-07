@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { Location, PopStateEvent } from '@angular/common';
 import { AuthService } from 'src/app/services/auth-service.service';
@@ -8,12 +8,15 @@ import { AuthService } from 'src/app/services/auth-service.service';
     templateUrl: './navbar.component.html',
     styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, OnDestroy {
     public isCollapsed = true;
     private lastPoppedUrl: string;
     private yScrollStack: number[] = [];
+    private userEmail: string;
 
     constructor(public location: Location, private router: Router, private authService: AuthService) {
+    }
+    ngOnDestroy(): void {
     }
 
     ngOnInit() {
@@ -33,6 +36,8 @@ export class NavbarComponent implements OnInit {
      this.location.subscribe((ev:PopStateEvent) => {
          this.lastPoppedUrl = ev.url;
      });
+
+     this.userEmail = localStorage.getItem('userEmail');
     }
 
     isHome() {
@@ -52,6 +57,7 @@ export class NavbarComponent implements OnInit {
 
     logout(){
         localStorage.setItem('auth', 'no');
+        localStorage.setItem('userEmail', '');
         this.router.navigate(['/home']);
     }
 
@@ -64,4 +70,5 @@ export class NavbarComponent implements OnInit {
     //         return false;
     //     }
     // }
+    
 }

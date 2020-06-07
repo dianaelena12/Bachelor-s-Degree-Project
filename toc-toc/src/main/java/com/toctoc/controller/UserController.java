@@ -14,13 +14,14 @@ import java.util.List;
 
 @RestController
 public class UserController {
+
     @Autowired
     private UserService userService;
 
     @PostMapping("/register")
     public ResponseEntity register(@RequestBody User user) {
         userService.register(user.getName(), user.getEmail(), user.getPassword());
-        return new ResponseEntity( HttpStatus.OK);
+        return new ResponseEntity(HttpStatus.OK);
     }
 
     @GetMapping("/see-all-users")

@@ -8,7 +8,7 @@ import java.util.List;
 @Document(indexName = "recipes", type = "recipe")
 public class Recipe {
     @Id
-    private long Id;
+    private String id;
 
     private String title;
 
@@ -26,15 +26,15 @@ public class Recipe {
 
     private List<String> tags;
 
-    public long getId() {
-        return Id;
+    public String getId() {
+        return id;
     }
 
     public Recipe() {
     }
 
-    public Recipe(long id, String title, Integer total_time, String yields, String instructions, List<String> ingredients, String image, String links, List<String> tags) {
-        Id = id;
+    public Recipe(String id, String title, Integer total_time, String yields, String instructions, List<String> ingredients, String image, String links, List<String> tags) {
+        this.id = id;
         this.title = title;
         this.total_time = total_time;
         this.yields = yields;
@@ -45,8 +45,8 @@ public class Recipe {
         this.tags = tags;
     }
 
-    public void setId(long id) {
-        Id = id;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTitle() {

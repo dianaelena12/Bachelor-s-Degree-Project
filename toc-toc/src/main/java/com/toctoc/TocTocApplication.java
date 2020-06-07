@@ -1,5 +1,7 @@
 package com.toctoc;
 
+import com.toctoc.models.RecipeView;
+import com.toctoc.repo.RecipeViewsRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,6 +19,7 @@ public class TocTocApplication {
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
 
     public static void main(String[] args) {
         SpringApplication.run(TocTocApplication.class, args);

@@ -6,10 +6,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SignupComponent } from './signup/signup.component';
-import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 import { TitleSearchComponent } from './search-components/title-search/title-search.component';
 import { BrowseRecipesComponent } from './browse/browse-recipes/browse-recipes.component';
+import { PopularComponent } from './popular/popular.component';
+import { FavouritesComponent } from './favourites/favourites.component';
+import { HistoryComponent } from './history/history.component';
 
 const routes: Routes =[
     { path: 'home',             component: HomeComponent },
@@ -18,6 +20,9 @@ const routes: Routes =[
     { path: 'signup',          component: SignupComponent },
     { path: 'login',          component: LoginComponent },
     { path: 'recipe-details',          component: ProfileComponent },
+    { path: 'popular',          component: PopularComponent },
+    { path: 'favourites',          component: FavouritesComponent },
+    { path: 'history',          component: HistoryComponent },
     { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

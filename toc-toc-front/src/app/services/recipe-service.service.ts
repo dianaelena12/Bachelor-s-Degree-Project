@@ -22,4 +22,9 @@ export class RecipeServiceService {
     let request = this.baseUrl + '/all';
     return this.http.get<Recipe[]>(request);
   }
+
+  getRecipeById(id: string): Observable<Recipe>{
+      let request = this.baseUrl + '/get/' + id;
+      return this.http.get<Recipe>(request);
+  }
 }

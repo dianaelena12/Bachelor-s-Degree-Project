@@ -21,6 +21,12 @@ export class TitleSearchComponent implements OnInit, OnDestroy {
   onSubmit() {
     const recipeSubscription = this.recipeService.getRecipesByTitle(this.inputText).subscribe((data: Recipe[]) => {
       this.results = data;
+      for(let recipe of this.results){
+        if(recipe.image == '')
+          recipe.image = 'https://tastesbetterfromscratch.com/wp-content/uploads/2017/06/Fresh-Fruit-Bowl-2.jpg';
+        if(recipe.total_time == -1)
+          recipe.total_time = 45
+      }
     });
     this.recipeComponentSubscription.add(recipeSubscription);
   }

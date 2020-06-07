@@ -1,5 +1,5 @@
 export class Recipe {
-    _id: number;
+    id: string;
     title: string;
     total_time: number;
     yields: string;

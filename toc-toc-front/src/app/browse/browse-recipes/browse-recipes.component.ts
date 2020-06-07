@@ -18,6 +18,13 @@ export class BrowseRecipesComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     const recipeSubscription = this.recipeService.getAllRecipes().subscribe((data: Recipe[]) => {
       this.recipes = data;
+
+      for(let recipe of this.recipes){
+        if(recipe.image == '')
+          recipe.image = 'https://tastesbetterfromscratch.com/wp-content/uploads/2017/06/Fresh-Fruit-Bowl-2.jpg';
+        if(recipe.total_time == -1)
+          recipe.total_time = 35
+      }
     });
     this.recipeComponentSubscription.add(recipeSubscription);
   }
