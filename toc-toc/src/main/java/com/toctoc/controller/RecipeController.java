@@ -3,6 +3,8 @@ package com.toctoc.controller;
 import com.toctoc.models.Recipe;
 import com.toctoc.service.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -61,6 +63,13 @@ public class RecipeController {
     public List<Optional<Recipe>> findByIds(@RequestBody List<String> ids) {
         List<Recipe> recipes = new ArrayList<>();
         return service.getRecipesFromIdsList(ids);
+    }
+
+    @GetMapping("/random")
+    @CrossOrigin(origins = "*")
+    public ResponseEntity<Recipe> getRandom() {
+        var result = this.service.getRandom();
+        return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
 }

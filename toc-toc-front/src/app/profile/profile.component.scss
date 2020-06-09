@@ -10,7 +10,19 @@ li {
     text-align: left;
 }
 
-div.card-profile-image {
-    border: magenta;
-    border-top: 20px;
+
+.add-to-favourites{
+    position: absolute;
+    float: right;
+    // left: 520px;
+    // margin-top: 30px;
+    visibility: visible;
+}
+
+.is-favourite{
+    position: absolute;
+    float: right;
+    // left: 520px;
+    // margin-top: 30px;
+    visibility: hidden;
 }

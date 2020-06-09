@@ -19,5 +19,22 @@ public class UserHistoryService {
         this.repository.save(history);
     }
 
+    public boolean isFavourite(String userId, String recipeId) {
+        UserHistory history = repository.getByUserId(userId);
+        if (history == null) {
+            return false;
+        }
+        return history.getFavourites().contains(recipeId);
+    }
+
+    public boolean removeFavourite(String userId, String recipeId) {
+        if (!isFavourite(userId, recipeId))
+            return false;
+        var history = this.getByUserId(userId);
+        var response = history.getFavourites().remove(recipeId);
+        save(history);
+        return response;
+    }
+
 
 }

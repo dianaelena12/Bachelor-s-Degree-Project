@@ -8,6 +8,7 @@ ul {
 .list-item {
     display: flex;
     padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .item-details{
@@ -20,4 +21,16 @@ ul {
     font-size: large;
     color: midnightblue;
     font-weight: bold;
+}
+
+.no-items {
+    display: flex;
+    padding-top: 10%;
+    padding-left: 35%;
+}
+
+.no-items p{
+    font-weight: bold;
+    font-size: larger;
+    color: mintcream;
 }

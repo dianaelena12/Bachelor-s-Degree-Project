@@ -24,6 +24,8 @@ import { TokenInterceptor } from './services/token-interceptor';
 import { PopularComponent } from './popular/popular.component';
 import { FavouritesComponent } from './favourites/favourites.component';
 import { HistoryComponent } from './history/history.component';
+import { LuckyComponent } from './lucky/lucky.component';
+import { SearchByIngredientsComponent } from './search-by-ingredients/search-by-ingredients.component';
 
 // export function tokenGetter() {
 //   return localStorage.getItem('token');
@@ -41,7 +43,9 @@ import { HistoryComponent } from './history/history.component';
     BrowseRecipesComponent,
     PopularComponent,
     FavouritesComponent,
-    HistoryComponent
+    HistoryComponent,
+    LuckyComponent,
+    SearchByIngredientsComponent
   ],
   imports: [
     BrowserModule,

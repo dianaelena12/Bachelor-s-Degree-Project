@@ -12,6 +12,8 @@ import { BrowseRecipesComponent } from './browse/browse-recipes/browse-recipes.c
 import { PopularComponent } from './popular/popular.component';
 import { FavouritesComponent } from './favourites/favourites.component';
 import { HistoryComponent } from './history/history.component';
+import { LuckyComponent } from './lucky/lucky.component';
+import { SearchByIngredientsComponent } from './search-by-ingredients/search-by-ingredients.component';
 
 const routes: Routes =[
     { path: 'home',             component: HomeComponent },
@@ -23,6 +25,8 @@ const routes: Routes =[
     { path: 'popular',          component: PopularComponent },
     { path: 'favourites',          component: FavouritesComponent },
     { path: 'history',          component: HistoryComponent },
+    { path: 'lucky',          component: LuckyComponent },
+    {path: 'find-by-ingredients', component: SearchByIngredientsComponent},
     { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

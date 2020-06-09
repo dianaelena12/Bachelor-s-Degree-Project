@@ -61,14 +61,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
         this.router.navigate(['/home']);
     }
 
-    // isDocumentation() {
-    //     var titlee = this.location.prepareExternalUrl(this.location.path());
-    //     if( titlee === '#/documentation' ) {
-    //         return true;
-    //     }
-    //     else {
-    //         return false;
-    //     }
-    // }
-    
+    toRandom(){
+        localStorage.setItem('random', '0');
+    }
+
 }

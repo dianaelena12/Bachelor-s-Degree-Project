@@ -1,0 +1,68 @@
+.no-items {
+    padding-top: 7%;
+    padding-left: 30%;
+    padding-right: 20%;
+}
+
+.no-items p{
+    font-weight: bold;
+    font-size: larger;
+    color: mintcream;
+}
+
+.first{
+    padding-left: 22%;
+}
+
+.input-layout {
+    display: flex;
+    padding-top: 1%;
+    padding-left: 33.3%;
+    padding-right: 30%;
+}
+
+.ingredients-list {
+    display: flex;
+    padding-left: 20%;
+}
+
+.list-ingredient {
+    display: flex;
+    border-radius: 10px;
+    padding: 10px;
+    height: 45px;
+}
+
+.list-ingredient:hover {
+    background-color: lightslategray;
+}
+
+.filter-button {
+    padding-left: 64.7%;
+}
+
+ul {
+    list-style-type: none;
+}
+.list-item {
+    display: flex;
+    padding-top: 50px;
+}
+
+.item-details{
+    padding-left: 30px;
+}
+
+.item-details .title {
+    padding-top: 10px;
+    padding-bottom: 15px;
+    font-size: large;
+    color: midnightblue;
+    font-weight: bold;
+}
+
+.not-found-card {
+    font: outline;
+    display: flex;
+    padding-left: 40%;
+}

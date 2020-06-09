@@ -1,0 +1,36 @@
+.luck {
+    display: flex;
+    padding-top: 5%;
+    padding-left: 40%;
+}
+
+.luck-button {
+    display: flex;
+    padding-left: 44%;
+    padding-bottom: 30px;
+}
+
+.luck p{
+    font-weight: bold;
+    font-size: larger;
+    color: mintcream;
+}
+
+.item {
+    display: flex;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+}
+
+.item-details{
+    padding-left: 30px;
+}
+
+.item-details .title {
+    padding-top: 10px;
+    padding-bottom: 15px;
+    font-size: large;
+    color: midnightblue;
+    font-weight: bold;
+}

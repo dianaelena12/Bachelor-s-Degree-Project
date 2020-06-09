@@ -41,7 +41,7 @@
               </a>
               <a routerLinkActive="active" [routerLink]="['/popular']" class="media d-flex align-items-center">
                 <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
-                  <i class="ni ni-spaceship"></i>
+                  <i class="ni ni-planet"></i>
                 </div>
                 <div class="media-body ml-3">
                   <h5 class="heading text-warning mb-md-1">Popular</h5>
@@ -59,7 +59,7 @@
           <div class="dropdown-menu">
             <a [routerLink]="['/find-by-title']" class="dropdown-item">Recipe by title</a>
             <a [routerLink]="['/find-by-ingredients']" class="dropdown-item">Recipe by ingredients</a>
-            <a [routerLink]="['/feeling-lucky']" class="dropdown-item">I'm feeling lucky</a>
+            <a [routerLink]="['/lucky']" (click)="toRandom()" class="dropdown-item">I'm feeling lucky</a>
           </div>
         </li>
       </ul>

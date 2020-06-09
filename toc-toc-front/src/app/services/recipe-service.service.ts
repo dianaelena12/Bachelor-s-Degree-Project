@@ -18,6 +18,11 @@ export class RecipeServiceService {
     return this.http.get<Recipe[]>(request);
   }
 
+  getRecipesByIngredients(ingredients: string[]): Observable<Recipe[]> {
+    let request = this.baseUrl + '/by-ingredients';
+    return this.http.post<Recipe[]>(request, ingredients);
+  }
+
   getAllRecipes(): Observable<Recipe[]> {
     let request = this.baseUrl + '/all';
     return this.http.get<Recipe[]>(request);
@@ -26,5 +31,9 @@ export class RecipeServiceService {
   getRecipeById(id: string): Observable<Recipe>{
       let request = this.baseUrl + '/get/' + id;
       return this.http.get<Recipe>(request);
+  }
+
+  getRandom(){
+    return this.http.get<Recipe>(this.baseUrl + '/random');
   }
 }

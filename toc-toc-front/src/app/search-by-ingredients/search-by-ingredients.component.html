@@ -15,6 +15,33 @@
                 <span></span>
                 <span></span>
               </div>
+            <div class="no-items">
+                <!-- <img src="./assets/img/icons/common/search.svg"  style="width:50px;height:50px;"> -->
+                <p class="first">Find recipes by ingredients!</p>
+                <p>Type all the ingredients you want in the input below, then click find!</p>
+            </div>
+            <div class="input-layout input-group mb-4">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="ni"></i>
+                    </span>
+                </div>
+                <input class="form-control" [(ngModel)]="currentIngredient" (keyup.enter)="onSubmit()" placeholder="Add ingredient" type="text">
+                <button class="btn btn-1 btn-primary" (click)="onSubmit()"> + </button>
+            </div>
+            <div class="ingredients-list">
+                <ul class="ingredients" *ngFor="let ingredient of ingredients">
+                    <div class="list-ingredient btn-primary" (click)="removeIngredient($event, ingredient)">
+                        <p> {{ ingredient }}</p>
+                        <span style="padding-left: 5px;">
+                            <i class="ni ni-fat-remove"></i>
+                        </span>
+                    </div>
+                </ul>
+            </div>
+            <div class="filter-button">
+                <button class="btn btn-1 btn-info" (click)="find()"> Find! </button>
+            </div>       
             <div class="separator separator-bottom separator-skew">
                 <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
                   <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
@@ -22,32 +49,13 @@
               </div>
         </section>
         <section class="section">
-            <div class="container">
-                <div class="card card-profile shadow mt--300">
-                        <div class="row align-items-center justify-content-center">
-                            <div class="col-lg-6 text-center">
-                                <p class="lead text-primary">Allright. Let's get started. In the input box below, type the name of any recipe you would like then press 'RESULTS' to see the matching results.</p>
-                            </div>
-                        </div>
-                    <div class="input-group mb-4">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">
-                                <i class="ni ni-zoom-split-in"></i>
-                            </span>
-                        </div>
-                        <input class="form-control" [(ngModel)]="inputText" (keyup.enter)="onSubmit()" placeholder="Search" type="text">
-                    </div>
-                    <div class="button">
-                        <button class="btn btn-icon btn-3 btn-neutral" type="button" (click)="onSubmit()">
-                            <span class="btn-inner--icon">
-                            </span>
-                            <span class="btn-inner--text">
-                                Results
-                            </span>
-                        </button>
-                    </div>
+            <div class="not-found-card" *ngIf="isEmpty() && wasPushed()"  style="height: 40px;">
+                <p>Maybe you spelled something wrong? Try again!</p>
+            </div>   
+            <div class="container" style="padding-top: 13%;">
+                <div class="card card-profile shadow mt--300" *ngIf="!isEmpty()">
                     <div class="list-items">
-                        <ul class="recipes" *ngFor="let recipe of results">
+                        <ul class="recipes" *ngFor="let recipe of recipes">
                             <li> 
                                 <a [routerLink] = "['/recipe-details']" [state]= "{ recipe : recipe.id }">
                                     <div class="list-item">
@@ -64,8 +72,9 @@
                             </li>
                         </ul>
                     </div>
-                 </div>   
+                 </div>
             </div>
         </section>
     </div>
 </main>
+

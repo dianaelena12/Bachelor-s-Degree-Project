@@ -21,3 +21,15 @@ ul {
     color: midnightblue;
     font-weight: bold;
 }
+
+.no-items {
+    display: flex;
+    padding-top: 10%;
+    padding-left: 40%;
+}
+
+.no-items p{
+    font-weight: bold;
+    font-size: larger;
+    color: mintcream;
+}
