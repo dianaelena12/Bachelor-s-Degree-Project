@@ -20,6 +20,7 @@ public class UserHistoryService {
     }
 
     public boolean isFavourite(String userId, String recipeId) {
+        repository.deleteAll();
         UserHistory history = repository.getByUserId(userId);
         if (history == null) {
             return false;

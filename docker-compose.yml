@@ -18,3 +18,16 @@ services:
     ports:
       - '27017:27017'
     command: --serviceExecutor adaptive
+  server:
+    image: toc-toc
+    depends_on:
+      - e-node
+      - mongo
+    ports:
+      - '8080:8080'
+  web:
+    image: toctocfront:latest
+    depends_on:
+      - server
+    ports:
+      - '80:80'

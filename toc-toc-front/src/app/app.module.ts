@@ -55,19 +55,8 @@ import { SearchByIngredientsComponent } from './search-by-ingredients/search-by-
     AppRoutingModule,
     HttpClientModule,
     HomeModule
-    // JwtModule.forRoot({
-    //   config: {
-    //     tokenGetter,
-    //     whitelistedDomains: ['localhost:8080']
-    //   }
-    // })
   ],
   providers: [
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: TokenInterceptor,
-    //   multi: true
-    // }
   ],
   bootstrap: [AppComponent]
 })

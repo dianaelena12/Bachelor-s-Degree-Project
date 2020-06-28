@@ -18,7 +18,7 @@ import org.springframework.data.mongodb.core.mapping.MongoMappingContext;
 public class MongoConfig extends AbstractMongoConfiguration {
     @Override
     public MongoClient mongoClient() {
-        return new MongoClient("127.0.0.1", 27017);
+        return new MongoClient("mongo", 27017);
     }
 
     @Override

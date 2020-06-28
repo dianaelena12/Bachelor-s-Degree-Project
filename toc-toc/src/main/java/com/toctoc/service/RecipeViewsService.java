@@ -23,6 +23,7 @@ public class RecipeViewsService {
     }
 
     public List<String> getMostPopular() {
+        repository.deleteAll();
         return repository.findDistinctTop10ByOrderByNumberOfViewsDesc().stream().map(recipeView -> recipeView.getRecipeId()).collect(Collectors.toList());
     }
 }

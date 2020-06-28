@@ -1,4 +1,4 @@
-<nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top headroom--pinned">
+<nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top">
   <div class="container">
     <a class="navbar-brand mr-lg-5" [routerLink]="['/home']">
       <img src="./assets/img/brand/toc-toc-logo-white.png">
@@ -59,51 +59,49 @@
           <div class="dropdown-menu">
             <a [routerLink]="['/find-by-title']" class="dropdown-item">Recipe by title</a>
             <a [routerLink]="['/find-by-ingredients']" class="dropdown-item">Recipe by ingredients</a>
-            <a [routerLink]="['/lucky']" (click)="toRandom()" class="dropdown-item">I'm feeling lucky</a>
           </div>
+        </li>
+        <li class="nav-item">
+          <a routerLinkActive="active" [routerLink]="['/lucky']" (click)="toRandom()" class="nav-link no-caret" title="Test your luck. Check out a random generated recipe">
+            <span class="nav-link-inner--text">I'm feeling lucky</span>
+          </a>
         </li>
       </ul>
       <ul class="navbar-nav navbar-nav-hover align-items-lg-center ml-lg-auto">
         <div *ngIf="loggedIn() == false"  class="loggedIn__wrapper">
           <li class="nav-item d-none d-lg-block ml-lg-4">
-            <a routerLinkActive="active" [routerLink]="['signup']" target="_blank" class="btn btn-neutral btn-icon">
+            <a routerLinkActive="active" [routerLink]="['signup']" class="btn btn-neutral btn-icon">
               <span class="nav-link-inner--text">Register</span>
             </a>
           </li>
         </div>
         <div *ngIf="loggedIn() == false" class="loggedIn__wrapper">
           <li class="nav-item d-none d-lg-block ml-lg-4">
-            <a routerLinkActive="active" [routerLink]="['login']"target="_blank" class="btn btn-neutral btn-icon">
+            <a routerLinkActive="active" [routerLink]="['login']" class="btn btn-neutral btn-icon">
               <span class="nav-link-inner--text">Log In</span>
             </a>
           </li>
         </div>
         <div *ngIf="loggedIn()" class="loggedIn__wrapper">
-          <li class="nav-item dropdown">
-            <a class="nav-link no-caret" data-toggle="dropdown" role="button">
-              <i class="ni ni-collection d-lg-none"></i>
-              <span class="nav-link-inner--text">
-                <img src="./assets/img/icons/common/hamburger-24.svg" class="nav-link-inner--text" style="width:30px;height:30px;">
-              </span>
+          <li class="nav-item d-none d-lg-block ml-lg-4">
+            <a routerLinkActive="active" [routerLink]="['/favourites']" class="nav-link no-caret" title="Check out your favourites">
+              <span class="nav-link-inner--text">Favourites</span>
             </a>
-            <div class="dropdown-menu">
-              <div>
-                <a [routerLink]="['/favourites']" class="dropdown-item">Favourites</a>
-              </div>
-              <div>
-                <a [routerLink]="['/history']" class="dropdown-item">History</a>
-              </div>
-              <div>
-                -------------------------------------
-                <button routerLinkActive="active" (click)="logout()"  target="_blank" class="dropdown-item">Log out</button>
-              </div>
-            </div>
           </li>
-          <!-- <li class="nav-item d-none d-lg-block ml-lg-4">
-            <button routerLinkActive="active" (click)="logout()"  target="_blank" class="btn btn-neutral btn-icon">
+        </div>
+        <div *ngIf="loggedIn()" class="loggedIn__wrapper">
+          <li class="nav-item d-none d-lg-block ml-lg-4">
+            <a routerLinkActive="active" [routerLink]="['/history']" class="nav-link no-caret" title="Check out previously visisted recipes">
+              <span class="nav-link-inner--text">History</span>
+            </a>
+          </li>
+        </div>
+        <div *ngIf="loggedIn()" class="loggedIn__wrapper">
+          <li class="nav-item d-none d-lg-block ml-lg-4">
+            <a (click)="logout()" target="_blank" class="btn btn-neutral btn-icon">
               <span class="nav-link-inner--text">Log out</span>
-            </button>
-          </li> -->
+            </a>
+          </li>
         </div>
       </ul>
     </div>
